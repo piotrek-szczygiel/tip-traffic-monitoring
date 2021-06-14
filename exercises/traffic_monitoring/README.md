@@ -25,14 +25,14 @@ This command will start monitoring function which displays data transfered betwe
 ## Theory
 In P4 there are extern types, functions and objects. They are all defined in the architecture file description [v1model.p4](https://github.com/p4lang/p4c/blob/master/p4include/v1model.p4).
 ### To declare counter in P4 you need to define extern type:
-```
+```P4
 extern counter  {
       counter ( bit <32> size ,  CounterType  type );
       void  count ( in  bit <32> index ) ;
 }
 ```
 ### The granularity of each counter, packets, bytes or both, can be specified using the following enum:
-```
+```P4
 enum CounterType {
     packets,
     bytes,
