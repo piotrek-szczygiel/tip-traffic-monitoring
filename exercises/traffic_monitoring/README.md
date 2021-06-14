@@ -34,7 +34,7 @@ enum CounterType {
     packets_and_bytes
 }
 ```
-The v1model already includes the declarations from above and you can use them in your p4 code.
+The v1model already includes the declarations from above and you can use them in your P4 code.
 
 ### Custom Control Plane to read counters state
 In file [counter.py](./counter.py) you can see the control plane.
@@ -45,7 +45,7 @@ Function *packets_and_bytes()* uses that code to read that from counter with def
 ## How to do excercise:
 
 #### Task 1: Define counter in [traffic_monitoring.p4](./traffic_monitoring.p4) and call proper method.
-#### Task 2: Change P4 code so that only valid packets will be counter.
+#### Task 2: Change P4 code so that only valid packets will be counted.
 #### Task 3: Change [counter.py](./counter.py) to support other types of window besides 60 seconds.
 
 Code above will work correctly when you will fill properly all TODOs left in the code of [counter.py](./counter.py) and [traffic_monitoring.p4](./traffic_monitoring.p4) 
