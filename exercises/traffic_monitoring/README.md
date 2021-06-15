@@ -47,6 +47,17 @@ You just need to add import at the beginning of .p4 file:
 ```
 After that you can use them in your P4 code.
 
+### To define counter declared by extern you have to add this line to ingress processing control.
+```P4
+counter(1024, CounterType.packets_and_bytes) traffic_counter;
+```
+this line defines counter *traffic_counter* which counts packets and bytes up to 1024 size. Counter state is stored in array. 
+
+To count what you want to you have to call *count* method. For example inside *ipv4_forward* method where you can pass port data to counter as an index.
+```P4
+traffic_counter.count((bit<32>) standard_metadata.ingress_port);
+```
+
 ### Custom Control Plane to read counters state
 In file [counter.py](./counter.py) you can see the control plane.
 You can observe that there are functions to read the counter state like *get_packets_and_bytes()* that reads packet and bytes data from counter which suggests the type of counter you should define. 
