@@ -39,13 +39,29 @@ enum CounterType {
     packets_and_bytes
 }
 ```
-The v1model already includes the declarations from above and you can use them in your P4 code.
+The v1model already includes the declarations from above, you should have it accessible on your system if you installed P4 correctly.
+You just need to add import at the beginning of .p4 file:
+```P4
+#include <v1model.p4>
+```
+After that you can use them in your P4 code.
 
 ### Custom Control Plane to read counters state
 In file [counter.py](./counter.py) you can see the control plane.
 You can observe that there are functions to read the counter state like *get_packets_and_bytes()* that reads packet and bytes data from counter which suggests the type of counter you should define. 
 
 Function *packets_and_bytes()* uses that code to read that from counter with defined name - *traffic_counter*.
+```python
+def get_packets_and_bytes(p4info_helper, sw, counter_name, index):
+    for response in sw.ReadCounters(p4info_helper.get_counters_id(counter_name), index):
+        for entity in response.entities:
+            counter = entity.counter_entry
+            return counter.data.packet_count, counter.data.byte_count
+
+def packets_and_bytes(switch, port):
+      return get_packets_and_bytes(p4info_helper, switch, "MyIngress.traffic_counter", port)
+```
+Each switch has method to read data from counter: *ReadCounters(...)* - which returns data that counter provides.
 
 ## Excercise:
 
