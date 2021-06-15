@@ -4,6 +4,7 @@ To do this we will use counters with custom Control Plane.
 
 
 ## How to run the excercise:
+Have linux system with P4 installed (preferably Virtual Machine) and clone this repository to it.
 
 1. In your shell run:
 ```
@@ -72,4 +73,4 @@ Each switch has method to read data from counter: *ReadCounters(...)* - which re
 Code above will work correctly when you will fill properly all TODOs left in the code of [counter.py](./counter.py) and [traffic_monitoring.p4](./traffic_monitoring.p4) 
 
 You don't have to make any changes to your topology, but if you want to - you have to also change it in Control Plane.
-If you encounter any probles you can help yourself with files in soultion folder.
+If you encounter any problems you can help yourself with files in soultion folder.
