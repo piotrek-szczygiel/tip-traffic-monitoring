@@ -167,5 +167,6 @@ For example, we can see above, that switch `s1` received 4 packets on port 1 whi
 If you finished the exercise, you can destroy Mininet environment using the following command:
 
 ```
+mininet> exit
 $ make stop
 ```
