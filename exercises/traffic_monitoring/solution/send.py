@@ -35,7 +35,14 @@ def main():
     print "Sending from %s to %s\n" % (iface_mac, str(addr))
     try:
         while True:
-            # TODO: Exercise 4
+            msg = "A" * random.randint(500, 1000)
+            pkt = Ether(src=iface_mac, dst="ff:ff:ff:ff:ff:ff")
+            pkt = (
+                pkt
+                / IP(dst=addr)
+                / TCP(dport=1234, sport=random.randint(49152, 65535))
+                / msg
+            )
             sendp(pkt, iface=iface, verbose=False)
             print "Sent %d bytes" % len(pkt)
             time.sleep(1)

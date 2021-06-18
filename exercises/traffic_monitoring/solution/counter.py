@@ -86,7 +86,8 @@ def main(p4info_file_path, bmv2_file_path):
             if time % 60 == 0:
                 summary(60)
 
-            # TODO: Exercise 3
+            if time % 5 == 0:
+                summary(5)
 
             time += 1
             sleep(1)

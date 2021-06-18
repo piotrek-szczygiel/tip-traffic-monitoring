@@ -7,7 +7,7 @@
       "table": "MyIngress.ipv4_lpm",
       "default_action": true,
       "action_name": "MyIngress.drop",
-      "action_params": { }
+      "action_params": {}
     },
     {
       "table": "MyIngress.ipv4_lpm",
