@@ -63,7 +63,7 @@ def main(p4info_file_path, bmv2_file_path):
                 data[s.name, p] = [(0, 0) for _ in range(max_window)]
 
         def summary(window):
-            print "=== Last %s seconds summarry ===" % window
+            print "=== Last %s seconds summary ===" % window
             for s in switches:
                 for p in ports:
                     prev_packets, prev_bytes = data[s.name, p][-window]

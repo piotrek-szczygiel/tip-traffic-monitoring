@@ -56,7 +56,7 @@ counter(1024, CounterType.packets_and_bytes) traffic_counter;
 ```
 
 We define counter of size 1024, to match the size of our `ipv4_lpm` table.
-Specifing `CounterType` as `packets_and_bytes` means we will be counting both packets and their size.
+Specifying `CounterType` as `packets_and_bytes` means we will be counting both packets and their size.
 
 ### Exercise 2 - counting the packets in `traffic_monitoring.p4`
 
@@ -146,7 +146,7 @@ $ ./counter.py
 After 5 seconds you should see something similar to this:
 
 ```
-=== Last 5 seconds summarry ===
+=== Last 5 seconds summary ===
 s1 1: 4 (2871 bytes)
 s1 2: 4 (216 bytes)
 s1 3: 0 (0 bytes)
