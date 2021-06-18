@@ -19,8 +19,8 @@ For this exercise we will use simple triangle topology consisting of 3 switches 
 You can inspect specifics of this topology inside the `triangle-topo` directory.
 
 ## Information about P4 Counters
-In P4 there is an extern type which lets you count various things happening inside your device.  
-We will use them to count packets and bytes processed on individual ports of our switches.
+In P4 there is an extern type called `counter`.  
+We will use it to count packets and bytes processed on individual ports of our switches.
 
 ### Counter declaration
 ```P4
