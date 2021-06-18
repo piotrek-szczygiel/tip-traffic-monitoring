@@ -138,7 +138,7 @@ Sent 1018 bytes
 ...
 ```
 
-- Open and run script that will monitor and display traffic statistics:
+- Open new terminal and run script that will monitor and display traffic statistics:
 ```
 $ ./counter.py
 ```
@@ -160,4 +160,4 @@ s3 3: 0 (0 bytes)
 
 As you can see there is a traffic information about every switch and its port in our topology.
 
-For example switch `s1` received 4 packets on port 1 which were 2871 bytes in total.
+For example, we can see above, that switch `s1` received 4 packets on port 1 which were 2871 bytes in total.
