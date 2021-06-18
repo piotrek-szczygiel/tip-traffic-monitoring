@@ -104,7 +104,7 @@ holds MAC Address of the sender, and destination will be just a broadcast.
 pkt = Ether(src=iface_mac, dst="ff:ff:ff:ff:ff:ff")
 ```
 
-Now let's create an IP packet and encapsulate it in our Ethernet frame:
+Now let's create a TCP packet:
 
 ```python
 pkt = pkt / IP(dst=addr) / TCP(dport=1234, sport=random.randint(49152, 65535)) / msg
