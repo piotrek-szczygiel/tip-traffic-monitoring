@@ -161,3 +161,11 @@ s3 3: 0 (0 bytes)
 As you can see there is a traffic information about every switch and its port in our topology.
 
 For example, we can see above, that switch `s1` received 4 packets on port 1 which were 2871 bytes in total.
+
+## Cleaning the Mininet environment
+
+If you finished the exercise, you can destroy Mininet environment using the following command:
+
+```
+$ make stop
+```
